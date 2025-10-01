@@ -28,6 +28,11 @@ public class ProductController {
 		return productService.findById(id);
 	}
 	
+	@QueryMapping
+	public List<Product> findAllByOrderByPriceAsc(){
+		return productService.findAllByOrderByPriceAsc();
+	}
+	
 	@MutationMapping
 	public Product createProduct(@Argument Product product) {
 		return productService.save(product);

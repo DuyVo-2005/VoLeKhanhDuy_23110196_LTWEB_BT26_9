@@ -13,4 +13,5 @@ public interface IProductService {
 
 	List<Product> findAll();
 
+	List<Product> findAllByOrderByPriceAsc();
 }

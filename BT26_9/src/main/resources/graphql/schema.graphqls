@@ -1,14 +1,30 @@
 type Product {
     id: ID!
-    name: String!
+    description: String
     price: Float!
+    title: String!
+    quantity: Int
+    userID: ID
+}
+
+type Category {
+	id: ID!
+	images: String
+	name: String!
 }
 
 type Query {
     products: [Product]
     productById(id: ID!): Product
+    findAllByOrderByPriceAsc: [Product]
 }
 
 type Mutation {
-    createProduct(name: String!, price: Float!): Product
+    createProduct(
+	    description: String
+	    price: Float!
+	    title: String!
+	    quantity: Int
+	    userID: ID
+    ): Product
 }

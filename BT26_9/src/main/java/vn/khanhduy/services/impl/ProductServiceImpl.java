@@ -30,6 +30,11 @@ public class ProductServiceImpl implements IProductService{
 	public <S extends Product> S save(S entity) {
 		return productRepository.save(entity);
 	}
+
+	@Override
+	public List<Product> findAllByOrderByPriceAsc() {
+		return productRepository.findAllByOrderByPriceAsc();
+	}
 	
 	
 }
