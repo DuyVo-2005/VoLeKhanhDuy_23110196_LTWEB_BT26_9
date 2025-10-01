@@ -79,7 +79,7 @@
 	<script>
 	const apiUrl = "http://localhost:8096/graphql";
 	
-	/* function loadCategories() {
+	function loadCategories() {
 	  $.ajax({
 	    url: apiUrl,
 	    type: "POST",
@@ -113,42 +113,7 @@
 	      $("#categoryTable tbody").html(rows);
 	    }
 	  });
-	} */
-	function loadCategories() {
-		  $.ajax({
-		    url: apiUrl,
-		    type: "POST",
-		    contentType: "application/json",
-		    data: JSON.stringify({
-		      query: `
-		        query {
-		          categories {
-		            id
-		            name
-		            images
-		          }
-		        }
-		      `
-		    }),
-		    success: function(res) {
-		      let rows = "";
-		      res.data.categories.forEach(cat => {
-		        rows += `
-		          <tr>
-		            <td>${cat.id}</td>
-		            <td>${cat.name}</td>
-		            <td>${cat.images ? `<img src="${cat.images}" width="50">` : ""}</td>
-		            <td>
-		              <button class="btn btn-sm btn-warning" onclick="editCategory(${cat.id})">Edit</button>
-		              <button class="btn btn-sm btn-danger" onclick="deleteCategory(${cat.id})">Delete</button>
-		            </td>
-		          </tr>
-		        `;
-		      });
-		      $("#categoryTable tbody").html(rows);
-		    }
-		  });
-		}
+	}
 
 
 	$("#addCategoryForm").submit(function(e) {
