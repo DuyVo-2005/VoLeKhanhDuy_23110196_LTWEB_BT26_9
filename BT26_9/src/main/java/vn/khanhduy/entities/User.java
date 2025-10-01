@@ -37,10 +37,10 @@ public class User implements Serializable{/**
 	@Column(columnDefinition = "nvarchar(255)")
 	String fullname;
 	
-	@Column(columnDefinition = "varchar(255)")
+	@Column(columnDefinition = "varchar(255) not null")
 	String email;
 	
-	@Column(columnDefinition = "varchar(255)")
+	@Column(columnDefinition = "varchar(255) not null")
 	String password;
 	
 	@Column(columnDefinition = "varchar(20)")

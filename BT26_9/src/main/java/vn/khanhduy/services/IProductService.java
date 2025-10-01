@@ -14,4 +14,10 @@ public interface IProductService {
 	List<Product> findAll();
 
 	List<Product> findAllByOrderByPriceAsc();
+	
+	List<Product> findProductsByCategoryId(Integer categoryId);
+
+	void deleteById(Integer id);
+	
+	//Product updateProduct(Integer id, Product product);
 }
